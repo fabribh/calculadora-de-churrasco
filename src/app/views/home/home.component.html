@@ -1,0 +1,34 @@
+<div class="container">
+    <mat-form-field hintLabel="Max 50 caracteres" appearance="outline">
+      <mat-label>Nome Convidado</mat-label>
+      <input matInput #input maxlength="50" placeholder="Nome">
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-hint align="end">{{input.value.length || 0}}/50</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Telefone Convidado</mat-label>
+      <input matInput placeholder="Telefone">
+      <mat-icon matSuffix>call</mat-icon>
+    </mat-form-field>
+    <mat-form-field hintLabel="Max 50 carateres" appearance="outline">
+      <mat-label>Email Convidado</mat-label>
+      <input matInput #input maxlength="50" placeholder="E-mail">
+      <mat-icon matSuffix>mail</mat-icon>
+      <mat-hint align="end">{{input.value.length || 0}}/50</mat-hint>
+    </mat-form-field>
+
+    <section class="topping-section" [formGroup]="toppings">
+      <h4>Selecione os ítens que você irá levar:</h4>
+      <p><mat-checkbox formControlName="boi">Boi</mat-checkbox></p>
+      <p><mat-checkbox formControlName="frango">Frango</mat-checkbox></p>
+      <p><mat-checkbox formControlName="porco">Porco</mat-checkbox></p>
+      <p><mat-checkbox formControlName="cerveja">Cerveja</mat-checkbox></p>
+      <p><mat-checkbox formControlName="suco">Suco</mat-checkbox></p>
+      <p><mat-checkbox formControlName="refrigerante">Refrigerante</mat-checkbox></p>
+  </section>
+
+  <div class="button-row">
+    <button mat-raised-button color="primary">Salvar</button>
+    <button mat-raised-button color="warn">Limpar</button>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.container {
+    background-color: #835B8D;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    width: 1200px;
+    height: 600px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 90%;
+    background-color: #FE7250;
+    margin: 50px;
+}
+
+table th{
+    color: #fff;
+}
+
+table td{
+    color: #fff;
+}
