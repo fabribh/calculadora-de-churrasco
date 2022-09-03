@@ -8,19 +8,36 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './views/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { ListComponent } from './views/list/list.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatCheckboxModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

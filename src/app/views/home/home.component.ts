@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   
-  urlImage: string;
+  toppings = this._formBuilder.group({
+    boi: false,
+    frango: false,
+    porco: false,
+    cerveja: false,
+    suco: false,
+    refrigerante: false
+  })
 
-  constructor() { 
-    this.urlImage = "../assets/fogo-brasa.png";
-  }
+  constructor(private _formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
