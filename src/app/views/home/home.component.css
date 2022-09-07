@@ -16,7 +16,30 @@
     margin: 12px 0;
 }
 
+.button-row {
+    display: flex;
+    justify-content: center;
+}
+
 .button-row button,
 .button-row a {
-  margin-right: 8px;
+  margin-right: 80px;
+}
+
+.section-mat-form{
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-mat-form mat-form-field mat-label,
+.section-mat-form mat-form-field mat-hint,
+.section-mat-form mat-form-field mat-hint input
+{
+    color: #fff;
+}
+
+.section-container {
+    display: flex;
+    justify-content: center;
 }
