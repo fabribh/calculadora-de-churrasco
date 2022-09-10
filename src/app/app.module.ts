@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { ListComponent } from './views/list/list.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatMenuModule } from '@angular/material/menu';
+import { ListDetailsComponent } from './views/list-details/list-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { MatTableModule } from '@angular/material/table';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ListComponent
+    ListComponent,
+    ListDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     MatButtonModule,
     MatTableModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

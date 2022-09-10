@@ -1,4 +1,10 @@
 .header {
     background-color: #835B8D;
     color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header div span {
+    margin-left: 20px;;
 }
