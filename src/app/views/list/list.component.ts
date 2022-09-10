@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface PeriodicElement {
   name: string;
@@ -30,7 +31,11 @@ export class ListComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'action'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(private _router: Router) { }
+
+  onSelected(element: any) {
+    this._router.navigate(['/list', element.position]);
+  }
 
   ngOnInit(): void {
   }

@@ -1,5 +1,6 @@
 <div class="container">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">   
+        <caption style="text-align: center;">Lista de Convidados</caption>
         <ng-container matColumnDef="position">
             <th mat-header-cell *matHeaderCellDef> No. </th>
             <td mat-cell *matCellDef="let element"> {{element.position}} </td>
@@ -19,7 +20,7 @@
         <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef> Ação </th>
             <td mat-cell *matCellDef="let element"> 
-                <button mat-icon-button color="primary">
+                <button mat-icon-button color="primary" (click)="onSelected(element)">
                    <mat-icon>edit</mat-icon>
                 </button>
                 <button mat-icon-button color="primary">

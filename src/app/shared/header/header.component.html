@@ -1,3 +1,11 @@
 <mat-toolbar class="header">
-  <span>Calculadora de churrasco</span>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/">Home</button>
+      <button mat-menu-item routerLink="/list">Convidados</button>
+    </mat-menu>
+    <span>Calculadora de churrasco</span>
+  </div>
+  <span>{{ patrocinioHeader }}</span>
 </mat-toolbar>

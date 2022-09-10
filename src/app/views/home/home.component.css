@@ -4,12 +4,21 @@
     margin-top: 80px;
     margin-bottom: 80px;
     width: 1200px;
-    height: 600px;
+    height: 615px;
     border-radius: 10px;
 }
 
 .container .mat-form-field + .mat-form-field {
     margin-left: 8px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;    
+}
+
+.title span {
+    margin-top: 10px;
 }
 
 .topping-section {
