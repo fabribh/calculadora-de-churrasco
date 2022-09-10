@@ -21,7 +21,7 @@ https://github.com/fabribh/calculadora-de-churrasco
 - [x] Passar dados via hierarquia de componentes, ou seja, usando @Input ou @Output.
 - [x] Mapear componentes à rotas no módulo de rotas.
 - [x] Criar navegação entre páginas por meio de rotas.
-- [ ] Passar dados entre componentes que representam diferentes telas via parâmetros de rotas.
+- [x] Passar dados entre componentes que representam diferentes telas via parâmetros de rotas.
 - [ ] Validar campos do formulário com REGEX e apresentar os erros.
 - [ ] Desabilitar o botão de submit enquanto o formulário está inválido.
 - [ ] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
