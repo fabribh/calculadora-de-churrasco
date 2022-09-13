@@ -26,10 +26,10 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.list().
-    then((data) => {
-      this.dataSource = data;
-    })
-    
+    subscribe(dados => {
+      this.convidados = dados
+      this.dataSource = new MatTableDataSource(this.convidados);
+    });
   }
 
 }
