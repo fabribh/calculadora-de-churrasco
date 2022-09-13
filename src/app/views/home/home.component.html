@@ -3,39 +3,45 @@
     <span>Cadastro de Convidado</span>
   </div>  
   <div class="section-mat-form">
-    <mat-form-field hintLabel="Max 50 caracteres" appearance="outline">
-      <mat-label>Nome Convidado</mat-label>
-      <input matInput #input maxlength="50" placeholder="Nome">
-      <mat-icon matSuffix>person</mat-icon>
-      <mat-hint align="end">{{input.value.length || 0}}/50</mat-hint>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Telefone Convidado</mat-label>
-      <input matInput placeholder="Telefone">
-      <mat-icon matSuffix>call</mat-icon>
-    </mat-form-field>
-    <mat-form-field hintLabel="Max 50 carateres" appearance="outline">
-      <mat-label>Email Convidado</mat-label>
-      <input matInput #input maxlength="50" placeholder="E-mail">
-      <mat-icon matSuffix>mail</mat-icon>
-      <mat-hint align="end">{{input.value.length || 0}}/50</mat-hint>
-    </mat-form-field>
+    <form id="ngForm" [formGroup]="formulario" #formDir="ngForm">
+      <mat-form-field hintLabel="Max 64 caracteres" appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput #inputNome maxlength="64" placeholder="Nome" formControlName="nome" required >
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-hint align="end">{{inputNome.value.length || 0}}/64</mat-hint>
+        <mat-error *ngIf="nome.errors?.['required']">{{ getErroMessageNome() }}</mat-error>
+        <mat-error *ngIf="nome.errors?.['pattern']">{{ getErroMessageNome() }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Celular</mat-label>
+        <input [mask]="'(00) 00000-0000'" matInput placeholder="Celular" formControlName="celular" required />
+        <mat-icon matSuffix>call</mat-icon>
+        <mat-error *ngIf="celular.errors?.['required']">{{ getErroMessagePhone() }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field hintLabel="Max 64 carateres" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput #inputEmail maxlength="64" placeholder="E-mail" formControlName="email" required >
+        <mat-icon matSuffix>mail</mat-icon>
+        <mat-hint align="end">{{inputEmail.value.length || 0}}/64</mat-hint>
+        <mat-error *ngIf="email.errors?.['required']">{{ getErroMessageEmail() }}</mat-error>
+        <mat-error *ngIf="email.errors?.['pattern']">{{ getErroMessageEmail() }}</mat-error>
+      </mat-form-field>
+
+      <div class="section-container">        
+        <section class="topping-section">
+            <h4>Selecione os ítens que você irá levar:</h4>
+            <p formArrayName="opcoes" *ngFor="let item of itens.controls; let i = index" >
+              <mat-checkbox [formControlName]=i>{{ opcoes[i] }}</mat-checkbox>
+            </p>
+        </section>
+      </div>
+  </form>
   </div>
-    
-  <div class="section-container">
-    <section class="topping-section" [formGroup]="toppings">
-      <h4>Selecione os ítens que você irá levar:</h4>
-      <p><mat-checkbox formControlName="boi">Boi</mat-checkbox></p>
-      <p><mat-checkbox formControlName="frango">Frango</mat-checkbox></p>
-      <p><mat-checkbox formControlName="porco">Porco</mat-checkbox></p>
-      <p><mat-checkbox formControlName="cerveja">Cerveja</mat-checkbox></p>
-      <p><mat-checkbox formControlName="suco">Suco</mat-checkbox></p>
-      <p><mat-checkbox formControlName="refrigerante">Refrigerante</mat-checkbox></p>
-    </section>
-  </div>
-    
+      
   <div class="button-row">
-    <button mat-raised-button color="primary">Salvar</button>
-    <button mat-raised-button color="warn">Limpar</button>
+    <button mat-raised-button color="primary" form="ngForm" [disabled]="!formulario.valid" (click)="onSubmit()">Salvar</button>
+    <button mat-raised-button color="warn" (click)="onCancel()">Cancelar</button>
   </div>
 </div>
