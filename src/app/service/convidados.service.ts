@@ -12,6 +12,6 @@ export class ConvidadosService {
   constructor(private http: HttpClient) { }
 
   list() {
-    return this.http.get(this.API).toPromise();
+    return this.http.get<Convidado[]>(this.API);
   }
 }
