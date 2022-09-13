@@ -1,0 +1,18 @@
+### Get
+GET http://localhost:3000/convidados
+
+### Post
+POST http://localhost:3000/convidados HTTP/1.1
+content-Type: application/json
+
+{
+    "nome": "Beltrano",
+    "celular": "31999887755",
+    "email": "teste@email.com",
+    "opcpes": [
+      "Boi",
+      "Porco",
+      "Cerveja",
+      "Refrigerante"
+    ]
+}

@@ -1,0 +1,82 @@
+{
+  "convidados": [
+    {
+      "id": 1,
+      "nome": "Fulano de Tal",
+      "celular": "31999887755",
+      "email": "teste@email.com",
+      "opcoes": [
+        "Boi",
+        "Frango",
+        "Porco",
+        "Cerveja",
+        "Suco",
+        "Refrigerante"
+      ]
+    },
+    { 
+      "id": 2,
+      "nome": "Beltrano",
+      "celular": "31999887755",
+      "email": "teste@email.com",
+      "opcoes": [
+        "Boi",
+        "Porco",
+        "Cerveja",
+        "Refrigerante"
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Fulano de Tal",
+      "celular": "31999887755",
+      "email": "teste@email.com",
+      "opcoes": [
+        "Boi",
+        "Frango",
+        "Porco",
+        "Cerveja",
+        "Suco",
+        "Refrigerante"
+      ]
+    },
+    { 
+      "id": 4,
+      "nome": "Beltrano",
+      "celular": "31999887755",
+      "email": "teste@email.com",
+      "opcoes": [
+        "Boi",
+        "Porco",
+        "Cerveja",
+        "Refrigerante"
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "Fulano de Tal",
+      "celular": "31999887755",
+      "email": "teste@email.com",
+      "opcoes": [
+        "Boi",
+        "Frango",
+        "Porco",
+        "Cerveja",
+        "Suco",
+        "Refrigerante"
+      ]
+    },
+    { 
+      "id": 6,
+      "nome": "Beltrano",
+      "celular": "31999887755",
+      "email": "teste@email.com",
+      "opcoes": [
+        "Boi",
+        "Porco",
+        "Cerveja",
+        "Refrigerante"
+      ]
+    }
+  ]
+}
