@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ConvidadosService } from 'src/app/service/convidados.service';
 import { Convidado } from 'src/app/model/convidado';
 import { MatTableDataSource } from '@angular/material/table';
+import { catchError, empty, of } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -30,6 +31,17 @@ export class ListComponent implements OnInit {
       this.convidados = dados
       this.dataSource = new MatTableDataSource(this.convidados);
     });
+  }
+
+  onDelete(convidado: Convidado) {
+    this.service.delete(convidado.id)
+      .subscribe(
+        () => this.onRefresh()
+      );
+  }
+
+  onRefresh() {
+    this.ngOnInit();
   }
 
 }

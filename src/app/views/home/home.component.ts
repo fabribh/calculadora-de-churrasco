@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { Convidado } from 'src/app/model/convidado';
+import { ConvidadosService } from 'src/app/service/convidados.service';
 import { WebStorageUtil } from '../../util/web-storage-util';
 
 @Component({
@@ -13,7 +15,7 @@ export class HomeComponent implements OnInit {
  
   opcoes = ['Boi', 'Frango', 'Porco', 'Cerveja', 'Suco', 'Refrigerante'];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private service: ConvidadosService) {
     this.formulario = this.formBuilder.group({
       id: new FormControl(null),
       nome: new FormControl(null, [Validators.required, Validators.pattern("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")]),
@@ -69,17 +71,22 @@ export class HomeComponent implements OnInit {
   
   onSubmit() {
 
-    let valueSubmit = Object.assign({}, this.formulario.value);
+    if (this.formulario.valid) {
     
-    valueSubmit = Object.assign(valueSubmit, {
-      opcoes: valueSubmit.opcoes
-        .map((v: any, i: any) => v ? this.opcoes[i] : null)
-        .filter((v: any) => v !== null)
-    });
-    
-    WebStorageUtil.set("form-dados", valueSubmit);
-
-    this.resetForm();
+      let valueSubmit = Object.assign({}, this.formulario.value);
+      
+      valueSubmit = Object.assign(valueSubmit, {
+        opcoes: valueSubmit.opcoes
+          .map((v: any, i: any) => v ? this.opcoes[i] : null)
+          .filter((v: any) => v !== null)
+      });
+      
+      const { id } = this.service.save(valueSubmit)
+        .subscribe();
+      if (id !== null) {
+        this.resetForm();
+      }
+    }
   }
 
   resetForm() {

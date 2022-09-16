@@ -14,7 +14,7 @@
         "Refrigerante"
       ]
     },
-    { 
+    {
       "id": 2,
       "nome": "Beltrano",
       "celular": "31999887755",
@@ -40,7 +40,7 @@
         "Refrigerante"
       ]
     },
-    { 
+    {
       "id": 4,
       "nome": "Beltrano",
       "celular": "31999887755",
@@ -66,7 +66,7 @@
         "Refrigerante"
       ]
     },
-    { 
+    {
       "id": 6,
       "nome": "Beltrano",
       "celular": "31999887755",
@@ -75,6 +75,18 @@
         "Boi",
         "Porco",
         "Cerveja",
+        "Refrigerante"
+      ]
+    },
+    {
+      "id": 7,
+      "nome": "Teste",
+      "celular": "31646546464",
+      "email": "fas@fasdf.com",
+      "opcoes": [
+        "Boi",
+        "Frango",
+        "Porco",
         "Refrigerante"
       ]
     }
