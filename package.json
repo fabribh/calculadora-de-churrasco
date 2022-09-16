@@ -4,10 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href=/calculadora-de-churrasco/",
+    "ghpages": "angular-cli-ghpages --dir=dist/calculadora-de-churrasco",
+    "deploy": "npm run build & npm run ghpages",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "backend": "json-server --watch db.json"
+    "backend": "json-server --watch db.json",
+    "json:server": "json-server --watch db.json",
+    "json:server:routes": "json-server --watch db.json --routes routes.json"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +25,7 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "angular-cli-ghpages": "^1.0.3",
     "ngx-mask": "^14.2.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
