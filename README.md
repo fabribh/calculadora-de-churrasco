@@ -2,9 +2,9 @@
 
 Este projeto tem como objetivo implementar de maneira progressiva uma aplicação web utilizando Angular, para realizar o calculo de iténs para um churrasco que cada convidado terá que levar, de acordo com sua escolha.
 
-# Endereço de Deploy - GitHub Pages
+# GitHub Pages
 
-https://github.com/fabribh/calculadora-de-churrasco
+### Endereço de deploy: https://fabribh.github.io/calculadora-de-churrasco/
 
 # Protótipo
 
